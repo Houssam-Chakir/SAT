@@ -1,12 +1,15 @@
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css"; // Import Flatpickr CSS
-
-import { showMenu, dropDownBtn } from "./src/dropdows.js";
+import Dropdown, { dropDownBtn, dropDownItems } from "./src/dropdown.js";
 import { fp } from "./src/datePicker.js";
-
+import caseSection from "./src/caseSection.js";
 
 //Event Listeners
-dropDownBtn.addEventListener("click", () => showMenu());
+dropDownBtn.addEventListener("click", () => Dropdown.showMenu());
+dropDownItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    caseSection.updateShift(item.id)
+    Dropdown.showMenu()
+  });
+});
 
 // init flatPicker
-fp()
+fp();

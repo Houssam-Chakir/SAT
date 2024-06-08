@@ -1,4 +1,6 @@
 import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css"; // Import Flatpickr CSS
+
 
 const datePicker = document.querySelector("#date-picker");
 let date
