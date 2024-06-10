@@ -26,6 +26,7 @@ class SubAdvisors {
           </div>
           <!-- SUB ADVISORS LIST -->
           <div
+            id='sa-drop-down'
             class="hidden drop-down absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-in-out delay-150"
             role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" placeholder="Shift">
             <div class="py-1" role="none">
@@ -48,6 +49,9 @@ class SubAdvisors {
       </div>
     `
     subAdvisorsSection.insertAdjacentHTML('beforeend', markup)
+    subAdvisorsSection.insertAdjacentHTML('beforeend', markup)
+    subAdvisorsSection.insertAdjacentHTML('beforeend', markup)
+
     console.log('form added');
   }
 
@@ -58,6 +62,12 @@ class SubAdvisors {
       return `
       <a href="#" id="${sb}" class="drop-down__item text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
       id="BN">${sb}</a>`
+    }).join('')
+  }
+
+  dropDownEvenListener(dropDown) {
+    dropDown.addEventListener('click', (e) => {
+      console.log(e);
     })
   }
 }
