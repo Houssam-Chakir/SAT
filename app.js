@@ -1,6 +1,6 @@
 import Dropdown, { dropDownBtn, dropDownItems } from "./src/dropdown.js";
 import { fp } from "./src/datePicker.js";
-import caseSection from "./src/caseSection.js";
+import CaseSection from "./src/caseSection.js";
 import subAdvisors, { subAdvisorsSection } from "./src/subAdvisors.js";
 
 let dropDownList, dropDownTargetBtn, subAdvisorElement;
@@ -12,7 +12,7 @@ dropDownBtn.addEventListener("click", () => Dropdown.toggleMenu());
 dropDownItems.forEach((item) => {
   // When a dropdown item is clicked, update the shift in caseSection and toggle the menu
   item.addEventListener("click", () => {
-    caseSection.updateShift(item.id); // Update the shift with the item's id
+    CaseSection.updateShift(item.id); // Update the shift with the item's id
     Dropdown.toggleMenu(); // Toggle the dropdown menu
   });
 });
@@ -54,3 +54,4 @@ subAdvisorsSection.addEventListener("click", (e) => {
 // init flatPicker
 fp();
 subAdvisors.formGenerator();
+
