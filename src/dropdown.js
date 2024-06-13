@@ -4,7 +4,7 @@ const dropDownMenu = document.querySelector(".drop-down");
 
 
 class Dropdown {
-  showMenu() {
+  toggleMenu() {
     dropDownMenu.classList.toggle('hidden')
   };
 }

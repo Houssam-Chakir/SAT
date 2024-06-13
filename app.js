@@ -3,13 +3,13 @@ import { fp } from "./src/datePicker.js";
 import caseSection from "./src/caseSection.js";
 import subAdvisors, { subAdvisorsSection } from "./src/subAdvisors.js";
 
-let dropDownList
+let dropDownList, dropDownTargetBtn
 //Event Listeners
-dropDownBtn.addEventListener("click", () => Dropdown.showMenu());
+dropDownBtn.addEventListener("click", () => Dropdown.toggleMenu());
 dropDownItems.forEach((item) => {
   item.addEventListener("click", () => {
     caseSection.updateShift(item.id);
-    Dropdown.showMenu();
+    Dropdown.toggleMenu();
   });
 });
 subAdvisorsSection.addEventListener("click", (e) => {
@@ -17,9 +17,10 @@ subAdvisorsSection.addEventListener("click", (e) => {
     e.target.id === "menu-button__SA" ||
     e.target.parentElement.id === "menu-button__SA"
   ) {
-    dropDownList = e.target.closest(".drop-down__btn").nextElementSibling;
+    dropDownTargetBtn = e.target.closest(".drop-down__btn")
+    dropDownList = dropDownTargetBtn.nextElementSibling;
     dropDownList.classList.toggle('hidden')
-    subAdvisors.dropDownEvenListener(dropDownList)
+    subAdvisors.dropDownEvenListener(dropDownList, dropDownTargetBtn)
 
   } else {
     subAdvisorsSection.querySelectorAll('.drop-down').forEach(menu => {
