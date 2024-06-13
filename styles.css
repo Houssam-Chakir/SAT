@@ -12,3 +12,9 @@
 .bigNight {
   background: rgb(1, 166, 187);
 }
+
+.deleteBtn {
+  background: crimson;
+  color: white;
+}
+
