@@ -54,4 +54,3 @@ subAdvisorsSection.addEventListener("click", (e) => {
 // init flatPicker
 fp();
 subAdvisors.formGenerator();
-
