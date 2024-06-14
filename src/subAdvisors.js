@@ -7,7 +7,7 @@ class SubAdvisors {
     const markup = `
       <!-- SUB ADVISOR STAT -->
       <div class="Sub-advisor flex gap-3 mx-3">
-        <div class="pt-1">Sub-advisor:</div>
+        <svg class='w-8' fill="#6180e5" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M16 15.503A5.041 5.041 0 1 0 16 5.42a5.041 5.041 0 0 0 0 10.083zm0 2.215c-6.703 0-11 3.699-11 5.5v3.363h22v-3.363c0-2.178-4.068-5.5-11-5.5z"></path></g></svg>
         <div class="relative inline-block text-left">
           <!-- SUB ADVISORS DROPDOWN BUTTON -->
           <div class="drop-down__btn">
@@ -41,8 +41,8 @@ class SubAdvisors {
           <input id="AHT" type="number" class="text-blue-950 rounded-md px-2 w-[120px]" placeholder="in Minutes" style="width: 120px;">
         </div>
         <!-- Delete BUTTON -->
-        <button class='Sub-advisor__delete-btn flex deleteBtn rounded-lg px-3 pt-1 text-red-600'>
-          X
+        <button class='Sub-advisor__delete-btn flex deleteBtn rounded-lg px-2 p-1 text-red-600'>
+          <svg class='w-6' viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#ffffff" d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></path></g></svg>
         </button>
       </div>
     `;

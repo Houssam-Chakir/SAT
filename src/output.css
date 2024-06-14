@@ -628,6 +628,10 @@ video {
   height: 100%;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .w-24 {
   width: 6rem;
 }
@@ -665,8 +669,32 @@ video {
   width: 100%;
 }
 
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
 .origin-top-right {
   transform-origin: top right;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @keyframes bounce {
@@ -715,6 +743,10 @@ video {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .gap-x-1 {
@@ -805,6 +837,14 @@ video {
   padding: 1rem;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -844,6 +884,14 @@ video {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.ps-3 {
+  padding-inline-start: 0.75rem;
+}
+
+.pe-4 {
+  padding-inline-end: 1rem;
 }
 
 .text-left {
