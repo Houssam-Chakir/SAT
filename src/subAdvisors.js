@@ -26,7 +26,7 @@ class SubAdvisors {
           <!-- SUB ADVISORS LIST -->
           <div
             id='sa-drop-down'
-            class="hidden drop-down absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-in-out delay-150"
+            class="hidden z-0 drop-down absolute left-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-in-out delay-150"
             role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" placeholder="Shift">
             <div class="py-1 " role="none">
               <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
@@ -35,14 +35,9 @@ class SubAdvisors {
           </div>
 
         </div>
-        <!-- CASE COUNT -->
+        <!-- HT -->
         <div class="flex gap-3">
-          <div class="pt-1">Case count</div>
-          <input id="caseCount" type="number" class="text-blue-950 rounded-md px-2 w-min-2" placeholder="" style="width: 70px;">
-        </div>
-        <!-- AHT -->
-        <div class="flex gap-3">
-          <div class="pt-1">AHT</div>
+          <div class="pt-1">Handle Time</div>
           <input id="AHT" type="number" class="text-blue-950 rounded-md px-2 w-[120px]" placeholder="in Minutes" style="width: 120px;">
         </div>
         <!-- Delete BUTTON -->
@@ -56,9 +51,6 @@ class SubAdvisors {
     console.log("form added");
   }
 
-  addButtonGenerator() {
-
-  }
   subAdvisorslistGenerator() {
     return this.subAdvisors
       .map((sb) => {

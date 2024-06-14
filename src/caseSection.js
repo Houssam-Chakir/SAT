@@ -9,7 +9,7 @@ class CaseSection {
     console.log('this.currentShift: ', this.currentShift);
     const color = this.shiftColor(shift)
     const markup = `
-      <div class="Case-shift ${color} flex gap-3 p-3 w-full">
+      <div class="Case-shift rounded-t-md ${color} flex gap-3 p-3 w-full">
         <div class="rounded-lg">
         ${shift}
         </div>

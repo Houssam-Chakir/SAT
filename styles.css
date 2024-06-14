@@ -3,18 +3,17 @@
 @tailwind utilities;
 
 .night {
-  background: rgb(230, 162, 35);
+  background: rgb(197, 100, 2);
 }
 .morning {
   background: rgb(79, 29, 226);
 
 }
 .bigNight {
-  background: rgb(1, 166, 187);
+  background: rgb(0, 131, 131);
 }
 
 .deleteBtn {
   background: crimson;
   color: white;
 }
-
