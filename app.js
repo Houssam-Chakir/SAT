@@ -2,6 +2,7 @@ import Dropdown, { dropDownBtn, dropDownItems } from "./src/dropdown.js";
 import { fp } from "./src/datePicker.js";
 import CaseSection from "./src/caseSection.js";
 import subAdvisors, { subAdvisorsSection } from "./src/subAdvisors.js";
+import dataModel from "./src/dataModel.js";
 
 let dropDownList, dropDownTargetBtn, subAdvisorElement;
 //Event Listeners
@@ -54,3 +55,4 @@ subAdvisorsSection.addEventListener("click", (e) => {
 // init flatPicker
 fp();
 subAdvisors.formGenerator();
+dataModel.updateDayStatstable()
