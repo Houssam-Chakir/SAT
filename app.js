@@ -5,7 +5,11 @@ import subAdvisors, { subAdvisorsSection } from "./src/subAdvisors.js";
 import dataModel from "./src/dataModel.js";
 
 let dropDownList, dropDownTargetBtn, subAdvisorElement;
-//Event Listeners
+
+//- subAdvisorSection buttons
+
+
+//f/ Event Listeners
 // Add an event listener to the shift dropDownBtn that toggles the dropdown menu when clicked
 dropDownBtn.addEventListener("click", () => Dropdown.toggleMenu());
 
@@ -18,41 +22,59 @@ dropDownItems.forEach((item) => {
   });
 });
 
+
+//TODO - make event listener for each button
 // Add an event listener to the subAdvisorsSection for click events
 subAdvisorsSection.addEventListener("click", (e) => {
-  // Check if the clicked target is the menu button or its parent
-  if (
-    e.target.id === "menu-button__SA" ||
-    e.target.parentElement.id === "menu-button__SA"
-  ) {
-    // Find the closest drop-down button to the clicked target
-    dropDownTargetBtn = e.target.closest(".drop-down__btn");
-    // Get the next sibling element of the drop-down button (the dropdown list)
-    dropDownList = dropDownTargetBtn.nextElementSibling;
-    // Toggle the 'hidden' class on the dropdown list to show/hide it
-    dropDownList.classList.toggle("hidden");
-    // Add an event listener to handle dropdown interactions
-    subAdvisors.dropDownEvenListener(dropDownList, dropDownTargetBtn);
-  } else {
-    // If the click is outside the menu button, hide all dropdown menus in subAdvisorsSection
-    subAdvisorsSection.querySelectorAll(".drop-down").forEach((menu) => {
-      menu.classList.add("hidden");
-    });
-  }
+  const target = e.target;
 
-  if (e.target.classList.contains("Sub-advisor__delete-btn") ) {
-    subAdvisorElement = e.target.closest(".Sub-advisor");
-    subAdvisorElement.remove()
-  } else {
-    console.log("bruh");
-  }
+  // Function to toggle dropdown menus
+  const toggleDropdown = (target) => {
+    if (target.closest('#menu-button__SA')) {
+      dropDownTargetBtn = target.closest(".drop-down__btn");
+      dropDownList = dropDownTargetBtn.nextElementSibling;
+      dropDownList.classList.toggle("hidden");
+      subAdvisors.dropDownEvenListener(dropDownList, dropDownTargetBtn);
+    } else {
+      subAdvisorsSection.querySelectorAll(".drop-down").forEach((menu) => {
+        menu.classList.add("hidden");
+      });
+    }
+  };
 
-  if(e.target.classList.contains('Add-btn')) {
-    subAdvisors.formGenerator()
-  }
+  // Function to handle deleting a sub-advisor
+  const deleteSubAdvisor = (target) => {
+    if (target.classList.contains("Sub-advisor__delete-btn")) {
+      const subAdvisorElement = target.closest(".Sub-advisor");
+      subAdvisorElement.remove();
+    }
+  };
+
+  // Function to handle adding a new sub-advisor
+  const addSubAdvisor = (target) => {
+    if (target.classList.contains('Add-btn')) {
+      subAdvisors.formGenerator();
+    }
+  };
+
+  // Function to handle submitting data
+  const submitData = (target) => {
+    if (target.classList.contains('Submit-btn')) {
+      dataModel.collectCaseData();
+      dataModel.updateDayStatstable();
+      subAdvisors.resetValues();
+    }
+  };
+
+  // Call the appropriate function based on the target element
+  toggleDropdown(target);
+  deleteSubAdvisor(target);
+  addSubAdvisor(target);
+  submitData(target);
 });
+
+
 
 // init flatPicker
 fp();
 subAdvisors.formGenerator();
-dataModel.updateDayStatstable()

@@ -11,7 +11,7 @@ class SubAdvisors {
         <div class="relative inline-block text-left">
           <!-- SUB ADVISORS DROPDOWN BUTTON -->
           <div class="drop-down__btn">
-            <button type="button"
+            <button  data-name='' type="button"
               style="z-index: ${this.zIndex};" class=" inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2  text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-500"
               id="menu-button__SA" aria-expanded="true" aria-haspopup="true">
               Sub-Advisor
@@ -68,7 +68,7 @@ class SubAdvisors {
     //drop down items on click of each
     dropDown.addEventListener("click", (e) => {
       btn.innerHTML = `
-      <button type="button"
+      <button data-name='${e.target.id}' type="button"
       class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  "
       id="menu-button__SA" aria-expanded="true" aria-haspopup="true">
       ${e.target.id}
@@ -80,6 +80,13 @@ class SubAdvisors {
     </button>
       `;
     });
+  }
+
+  resetValues() {
+    const inputslist = subAdvisorsSection.querySelectorAll('#AHT')
+    inputslist.forEach(input => {
+      input.value = ''
+    })
   }
 }
 

@@ -6,7 +6,7 @@ import CaseSection from "./caseSection";
 
 
 const datePicker = document.querySelector("#date-picker");
-let date
+export let selectedDate
 const dateSplit = (date) => {
   return date.split('-')
 }
@@ -15,14 +15,13 @@ export const fp = () => {
     dateFormat: "Y-m-d",
     defaultDate: "today",
     onChange: function (selectedDates, dateStr, instance) {
-      console.log("selectedDates: ", selectedDates[0]);
-      console.log("Selected date:", dateStr);
+      selectedDate = dateStr
+      console.log('date: ', selectedDate);
       CaseSection.showSection()
 
     },
     onReady: function (selectedDates, dateStr, instance) {
-      date = dateSplit(dateStr)
-      console.log('date: ', date);
+      selectedDate = dateStr
     },
 
     // Add more options as needed
