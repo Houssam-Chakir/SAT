@@ -31,7 +31,7 @@ class DataModel {
         caseCount: 0,
         missed: 0,
         AHT: 0,
-        subAdvisors: [{ name: "Brahim", caseCount: 1, AHT: [] }],
+        subAdvisors: [{ name: "Brahim", caseCount: 1, HT: [], AHT: 0 }],
       },
       {
         shift: "Night",
@@ -82,6 +82,16 @@ class DataModel {
     console.log("Updated Day Table");
   }
 
+  calcAHT(sa) {
+    if (sa.HT.length > 0) {
+        const totalHT = sa.HT.reduce((sum, ht) => sum + ht, 0);
+        sa.AHT = totalHT / sa.HT.length;
+    } else {
+        sa.AHT = 0; // or handle as needed if HT array is empty
+    }
+
+  }
+
   addSubAdvisorData(shift, subAdvisor) {
     shift.subAdvisors.push(subAdvisor);
 
@@ -92,7 +102,8 @@ class DataModel {
       if (saObj.name !== saName) return
 
       saObj.caseCount++;
-      saObj.AHT.push(+sa.querySelector("#AHT").value);
+      saObj.HT.push(+sa.querySelector("#AHT").value);
+      this.calcAHT(saObj)
 
     });
   }
@@ -120,13 +131,14 @@ class DataModel {
       subAdvisors.forEach((sa) => {
 
         const saData = sa.querySelector("#menu-button__SA");
+        const saAHT = sa.querySelector("#AHT").value
         const saName = saData.dataset.name
         console.log('saName: ', saName);
         console.log("saArray: ", saArray);
 
         // guard
-        if (saName === "")
-          return alert("Please select a sub advisor!");
+        if (saName === "" || saAHT === "")
+          return alert("Please fill in all the information needed first.");
 
 
         if (saArray.includes(saName)) {
@@ -135,7 +147,7 @@ class DataModel {
           count++
         } else {
           // if false we add new sa object
-          this.addSubAdvisorData(shift, { name: saName, caseCount: 1, AHT: [+sa.querySelector("#AHT").value] });
+          this.addSubAdvisorData(shift, { name: saName, caseCount: 1, HT: [+saAHT] });
           saArray.push(saName)
           count++
         }
@@ -148,11 +160,7 @@ class DataModel {
       console.log(
         "-----------------------------------------------------------------"
       );
-
       shift.caseCount++
-      console.log('count: ', count);
-      console.log('shift.caseCount: ', shift);
-
     });
   }
 }
