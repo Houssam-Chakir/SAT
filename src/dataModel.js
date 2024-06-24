@@ -97,19 +97,25 @@ class DataModel {
     });
   }
 
-  collectCaseData() {
+  collectCaseData(missed = false) {
     const subAdvisors = document.querySelectorAll(".Sub-advisor");
     console.log("subAdvisors: ", subAdvisors);
 
     this.dayData.shifts.forEach((shift) => {
       // checking which shift is current shift
+      let count = 0
+
       console.log("1 checking which shift is current shift: ");
       if (shift.shift !== caseSection.currentShift) return
+      if (missed === true) {
+        shift.caseCount++
+        shift.missed++
+        return
+      }
       //going over all existing SA in the current shift
       console.log(" 2going over all existing SA in the current shift: ");
 
       let saArray = shift.subAdvisors.map((saObj) => saObj.name);
-      let count = 0
 
       subAdvisors.forEach((sa) => {
 
@@ -143,7 +149,7 @@ class DataModel {
         "-----------------------------------------------------------------"
       );
 
-      shift.caseCount += count
+      shift.caseCount++
       console.log('count: ', count);
       console.log('shift.caseCount: ', shift);
 

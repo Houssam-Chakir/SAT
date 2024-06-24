@@ -66,11 +66,20 @@ subAdvisorsSection.addEventListener("click", (e) => {
     }
   };
 
+  const missedCase = (target) => {
+    if (target.classList.contains('Missed-btn')) {
+      dataModel.collectCaseData(true);
+      dataModel.updateDayStatstable();
+      subAdvisors.resetValues();
+    }
+  }
+
   // Call the appropriate function based on the target element
   toggleDropdown(target);
   deleteSubAdvisor(target);
   addSubAdvisor(target);
   submitData(target);
+  missedCase(target);
 });
 
 
