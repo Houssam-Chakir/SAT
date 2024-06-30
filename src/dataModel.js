@@ -31,7 +31,7 @@ class DataModel {
         caseCount: 0,
         missed: 0,
         AHT: 0,
-        subAdvisors: [{ name: "Brahim", caseCount: 1, HT: [], AHT: 0 }],
+        subAdvisors: [],
       },
       {
         shift: "Night",
@@ -92,6 +92,15 @@ class DataModel {
 
   }
 
+  calcShiftAHT(shift) {
+    let ahtAverage = []
+    shift.subAdvisors.forEach(sa => {
+      ahtAverage.push(sa.AHT)
+    })
+    shift.AHT = ahtAverage.reduce((sum, aht) => sum + aht, 0) /ahtAverage.length
+    console.log('shift.AHT: ', shift.AHT);
+  }
+
   addSubAdvisorData(shift, subAdvisor) {
     shift.subAdvisors.push(subAdvisor);
 
@@ -114,7 +123,7 @@ class DataModel {
 
     this.dayData.shifts.forEach((shift) => {
       // checking which shift is current shift
-      let count = 0
+      let accept = true
 
       console.log("1 checking which shift is current shift: ");
       if (shift.shift !== caseSection.currentShift) return
@@ -137,19 +146,19 @@ class DataModel {
         console.log("saArray: ", saArray);
 
         // guard
-        if (saName === "" || saAHT === "")
+        if (saName === "" || saAHT === "") {
+          accept = false
           return alert("Please fill in all the information needed first.");
+        }
 
-
+        //f/ adding or updating sa info
         if (saArray.includes(saName)) {
           // if true we just add new values
           this.updateSubAdvisorData(shift, sa, saName);
-          count++
         } else {
           // if false we add new sa object
           this.addSubAdvisorData(shift, { name: saName, caseCount: 1, HT: [+saAHT] });
           saArray.push(saName)
-          count++
         }
 
       });
@@ -160,7 +169,8 @@ class DataModel {
       console.log(
         "-----------------------------------------------------------------"
       );
-      shift.caseCount++
+      if(accept) shift.caseCount++
+      this.calcShiftAHT(shift)
     });
   }
 }

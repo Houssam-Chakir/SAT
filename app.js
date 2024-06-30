@@ -59,7 +59,7 @@ subAdvisorsSection.addEventListener("click", (e) => {
 
   // Function to handle submitting data
   const submitData = (target) => {
-    if (target.classList.contains('Submit-btn')) {
+    if (target.classList.contains('Submit-btn') || target.closest(".Submit-btn")) {
       dataModel.collectCaseData();
       dataModel.updateDayStatstable();
       subAdvisors.resetValues();
