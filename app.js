@@ -22,8 +22,6 @@ dropDownItems.forEach((item) => {
   });
 });
 
-
-//TODO - make event listener for each button
 // Add an event listener to the subAdvisorsSection for click events
 subAdvisorsSection.addEventListener("click", (e) => {
   const target = e.target;

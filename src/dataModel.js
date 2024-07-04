@@ -66,7 +66,8 @@ class DataModel {
       if (shift.shift === shiftElement.id) {
         if (shift.caseCount > 0)
           this.shiftCaseCount.innerHTML = shift.caseCount;
-        if (shift.shiftAHT > 0) this.shiftAHT.innerHTML = shift.AHT;
+        if (shift.AHT > 0) this.shiftAHT.innerHTML = shift.AHT;
+        console.log('this.shiftAHT: ', this.shiftAHT);
         if (shift.caseCount > 0)
           this.shiftFinishedCases.innerHTML = shift.caseCount - shift.missed;
         if (shift.missed > 0) this.shiftMissedCases.innerHTML = shift.missed;
@@ -93,6 +94,10 @@ class DataModel {
   }
 
   calcShiftAHT(shift) {
+    //TODO FIX AHT = NaN issue
+
+
+    if(shift.subAdvisors.length === 1) return shift.AHT = shift.subAdvisors[0].AHT || shift.subAdvisors[0].HT[0]
     let ahtAverage = []
     shift.subAdvisors.forEach(sa => {
       ahtAverage.push(sa.AHT)
@@ -165,7 +170,7 @@ class DataModel {
       console.log(
         "-----------------------------------------------------------------"
       );
-      console.log("shift subAdvisors : ", shift.subAdvisors);
+      console.log("shift : ", shift);
       console.log(
         "-----------------------------------------------------------------"
       );
