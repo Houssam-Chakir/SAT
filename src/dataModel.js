@@ -157,7 +157,7 @@ class DataModel {
           this.updateSubAdvisorData(sa, saName);
         } else {
           // if false we add new sa object
-          this.addSubAdvisorData({ name: saName, caseCount: 1, HT: [+saAHT] });
+          this.addSubAdvisorData({ name: saName, caseCount: 1, HT: [+saAHT], AHT: +saAHT });
           saArray.push(saName)
         }
 
@@ -176,17 +176,6 @@ class DataModel {
     });
   }
 
-  collectSubAdvisorsData() {
-    let data = []
-    let saList = []
-    this.dayData.forEach(shift => {
-      shift.subadvisors.forEach(sa => {
-        if(!saList.includes(sa.name)) {
-
-        }
-      });
-    })
-  }
 }
 
 export default new DataModel();

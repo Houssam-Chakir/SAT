@@ -61,6 +61,7 @@ subAdvisorsSection.addEventListener("click", (e) => {
       dataModel.collectCaseData();
       dataModel.updateDayStatstable();
       subAdvisors.resetValues();
+      subAdvisors.dashboardGenerator()
     }
   };
 

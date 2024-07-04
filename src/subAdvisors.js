@@ -1,4 +1,7 @@
+import dataModel from "./dataModel";
+
 export const subAdvisorsSection = document.querySelector(".Sub-advisors");
+const subAdvisorsDashboard = document.querySelector("#dashboard");
 
 class SubAdvisors {
   subAdvisors = ["Brahim", "Ahmed", "Ayman", "Halima", "Benhida"];
@@ -90,9 +93,47 @@ class SubAdvisors {
   }
 
   dashboardGenerator() {
-    //Iterate over subadvisors in all shifts
-    
+    //Iterate over subadvisors
+    const subAdvisors = dataModel.dayData.subAdvisors
+    console.log('subAdvisors: ', subAdvisors);
+
+    let markup
+    const dashboardHeaderMarkup = `
+      <div id="dashboard-header" class="flex">
+        <div id="Stats-day" class="max-sm:w-28 max-sm:text-sm w-44 border border-gray-700 px-4 py-2">
+          Sub-Advisor
+        </div>
+        <div id="shift-case-count" class="border w-32 border-gray-700 px-4 py-2">
+          Case count
+        </div>
+        <div id="shift-AHT" class="border w-32 border-gray-700 px-4 py-2">
+          AHT
+        </div>
+
+      </div>
+    `
+
     //extrat data and apply to form
+    if(!subAdvisors.length) return
+    subAdvisorsDashboard.innerHTML = ''
+    subAdvisorsDashboard.insertAdjacentHTML('beforeend', dashboardHeaderMarkup)
+    subAdvisors.forEach(sa => {
+      markup = `
+        <div id="subadvisor-row" class="flex">
+          <div id="sa-name" class="max-sm:w-28 max-sm:text-sm w-44 border border-gray-700 px-4 py-2">
+            ${sa.name}
+          </div>
+          <div id="sa-case-count" class="border w-32 border-gray-700 px-4 py-2">
+            ${sa.caseCount}
+          </div>
+          <div id="sa-AHT" class="border w-32 border-gray-700 px-4 py-2">
+            ${sa.AHT}
+          </div>
+
+        </div>
+      `
+      subAdvisorsDashboard.insertAdjacentHTML('beforeend', markup)
+    })
     //insert form
   }
 }
