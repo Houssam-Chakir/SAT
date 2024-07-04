@@ -99,7 +99,7 @@ class SubAdvisors {
 
     let markup
     const dashboardHeaderMarkup = `
-      <div id="dashboard-header" class="flex">
+      <div id="dashboard-header" class="flex bg-slate-800">
         <div id="Stats-day" class="max-sm:w-28 max-sm:text-sm w-44 border border-gray-700 px-4 py-2">
           Sub-Advisor
         </div>
