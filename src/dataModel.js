@@ -1,5 +1,6 @@
 import caseSection from "./caseSection";
 import { selectedDate } from "./datePicker";
+import subAdvisors from "./subAdvisors";
 
 class DataModel {
   bigNightRow = document.querySelector(".BigNight-shift-stats");
@@ -22,7 +23,7 @@ class DataModel {
         caseCount: 0,
         missed: 0,
         AHT: 0,
-        subAdvisors: [
+        HT: [
           // { name: "Alice Johnson", caseCount: 40 },
         ],
       },
@@ -31,18 +32,19 @@ class DataModel {
         caseCount: 0,
         missed: 0,
         AHT: 0,
-        subAdvisors: [],
+        HT: [],
       },
       {
         shift: "Night",
         caseCount: 0,
         missed: 0,
         AHT: 0,
-        subAdvisors: [
+        HT: [
           // { name: "Grace Lee", caseCount: 25 },
         ],
       },
     ],
+    subAdvisors: []
   };
   // You can add more dates and shifts as needed
 
@@ -94,25 +96,18 @@ class DataModel {
   }
 
   calcShiftAHT(shift) {
-    //TODO FIX AHT = NaN issue
-
-
-    if(shift.subAdvisors.length === 1) return shift.AHT = shift.subAdvisors[0].AHT || shift.subAdvisors[0].HT[0]
-    let ahtAverage = []
-    shift.subAdvisors.forEach(sa => {
-      ahtAverage.push(sa.AHT)
-    })
-    shift.AHT = ahtAverage.reduce((sum, aht) => sum + aht, 0) /ahtAverage.length
-    console.log('shift.AHT: ', shift.AHT);
-  }
-
-  addSubAdvisorData(shift, subAdvisor) {
-    shift.subAdvisors.push(subAdvisor);
+    if(shift.HT.length === 1) return shift.AHT = shift.HT[0]
+    shift.AHT = shift.HT.reduce((sum, aht) => sum + aht, 0) /shift.HT.length
 
   }
 
-  updateSubAdvisorData(shift, sa, saName) {
-    shift.subAdvisors.forEach((saObj) => {
+  addSubAdvisorData(subAdvisor) {
+    this.dayData.subAdvisors.push(subAdvisor);
+
+  }
+
+  updateSubAdvisorData(sa, saName) {
+    this.dayData.subAdvisors.forEach((saObj) => {
       if (saObj.name !== saName) return
 
       saObj.caseCount++;
@@ -140,7 +135,7 @@ class DataModel {
       //going over all existing SA in the current shift
       console.log(" 2going over all existing SA in the current shift: ");
 
-      let saArray = shift.subAdvisors.map((saObj) => saObj.name);
+      let saArray = this.dayData.subAdvisors.map((saObj) => saObj.name);
 
       subAdvisors.forEach((sa) => {
 
@@ -159,24 +154,38 @@ class DataModel {
         //f/ adding or updating sa info
         if (saArray.includes(saName)) {
           // if true we just add new values
-          this.updateSubAdvisorData(shift, sa, saName);
+          this.updateSubAdvisorData(sa, saName);
         } else {
           // if false we add new sa object
-          this.addSubAdvisorData(shift, { name: saName, caseCount: 1, HT: [+saAHT] });
+          this.addSubAdvisorData({ name: saName, caseCount: 1, HT: [+saAHT] });
           saArray.push(saName)
         }
+
+        shift.HT.push(+saAHT)
 
       });
       console.log(
         "-----------------------------------------------------------------"
       );
-      console.log("shift : ", shift);
+      console.log("day data : ", this.dayData);
       console.log(
         "-----------------------------------------------------------------"
       );
       if(accept) shift.caseCount++
       this.calcShiftAHT(shift)
     });
+  }
+
+  collectSubAdvisorsData() {
+    let data = []
+    let saList = []
+    this.dayData.forEach(shift => {
+      shift.subadvisors.forEach(sa => {
+        if(!saList.includes(sa.name)) {
+
+        }
+      });
+    })
   }
 }
 

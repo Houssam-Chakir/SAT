@@ -88,6 +88,13 @@ class SubAdvisors {
       input.value = ''
     })
   }
+
+  dashboardGenerator() {
+    //Iterate over subadvisors in all shifts
+    
+    //extrat data and apply to form
+    //insert form
+  }
 }
 
 export default new SubAdvisors();
