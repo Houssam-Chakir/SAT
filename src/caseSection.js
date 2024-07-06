@@ -1,8 +1,8 @@
-const caseSection = document.querySelector('.Case-section')
+const mainSection = document.querySelector('#main-section')
 const calendarIcon =document.querySelector('#Calendar-icon')
 
 class CaseSection {
-  currentShift = 'Morning'
+  currentShift = 'BigNight'
 
   updateShift(shift) {
     this.currentShift = shift
@@ -30,7 +30,7 @@ class CaseSection {
   }
 
   showSection() {
-    caseSection.classList.remove('hidden')
+    mainSection.classList.remove('hidden')
     calendarIcon.remove()
 
   }
