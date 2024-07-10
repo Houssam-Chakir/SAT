@@ -9,6 +9,8 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "dom-to-image-more": "^3.3.0",
+    "file-saver": "^2.0.5",
     "flatpickr": "^4.6.13"
   }
 }

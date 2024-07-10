@@ -88,7 +88,7 @@ class DataModel {
   calcAHT(sa) {
     if (sa.HT.length > 0) {
         const totalHT = sa.HT.reduce((sum, ht) => sum + ht, 0);
-        sa.AHT = totalHT / sa.HT.length;
+        sa.AHT = parseFloat(totalHT / sa.HT.length).toPrecision(2)
     } else {
         sa.AHT = 0; // or handle as needed if HT array is empty
     }
@@ -97,7 +97,8 @@ class DataModel {
 
   calcShiftAHT(shift) {
     if(shift.HT.length === 1) return shift.AHT = shift.HT[0]
-    shift.AHT = shift.HT.reduce((sum, aht) => sum + aht, 0) /shift.HT.length
+    let aht = shift.HT.reduce((sum, aht) => sum + aht, 0) /shift.HT.length
+    shift.AHT = parseFloat(aht).toPrecision(2)
 
   }
 
@@ -146,9 +147,9 @@ class DataModel {
         console.log("saArray: ", saArray);
 
         // guard
-        if (saName === "" || saAHT === "") {
+        if (saName === "" || saAHT === "" || !+saAHT) {
           accept = false
-          return alert("Please fill in all the information needed first.");
+          return alert("Please choose a name and use only numbers in handling time input");
         }
 
         //f/ adding or updating sa info

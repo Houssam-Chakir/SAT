@@ -4,7 +4,7 @@ export const subAdvisorsSection = document.querySelector(".Sub-advisors");
 const subAdvisorsDashboard = document.querySelector("#dashboard");
 
 class SubAdvisors {
-  subAdvisors = ["Brahim", "Ahmed", "Ayman", "Halima", "Benhida"];
+  subAdvisors = ["Brahim Bakrim", "Ahmed Loutia", "Ayman El morajji", "Halima Nadir", "Fatima Zahra Benhida", "Toufiq FAKKAR", "Ibtissam Haddadi", "Achraf Simour", "Moubarak Jamali", "Zeinab Ibrahim", "Youssef Hamouch", "Marouane EL FDIDINE", "Soumia Nadir"];
   zIndex = 500
   formGenerator() {
     const markup = `

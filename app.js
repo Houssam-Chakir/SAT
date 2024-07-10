@@ -3,6 +3,7 @@ import { fp } from "./src/datePicker.js";
 import CaseSection from "./src/caseSection.js";
 import subAdvisors, { subAdvisorsSection } from "./src/subAdvisors.js";
 import dataModel from "./src/dataModel.js";
+import { downloadButton, downloadScreenshot } from "./src/screenshot.js";
 
 let dropDownList, dropDownTargetBtn, subAdvisorElement;
 
@@ -80,6 +81,11 @@ subAdvisorsSection.addEventListener("click", (e) => {
   submitData(target);
   missedCase(target);
 });
+
+downloadButton.addEventListener('click', () => {
+  downloadScreenshot('captureElement', 'screenshot');
+});
+
 
 
 
