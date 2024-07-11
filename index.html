@@ -269,7 +269,7 @@
               class="flex flex-row-reverse gap-2 border-t border-t-gray-700 p-4"
             >
               <button
-                class="Submit-btn flex w-auto gap-1 border flex-grow-1 border-blue-500 hover:bg-blue-800 hover:ring hover:ring-blue-500 ps-2 pe-4 py-1 bg-blue-700 rounded-md"
+                class="Submit-btn flex w-auto gap-1 border flex-grow-1 border-blue-500 hover:bg-blue-800 hover:ring hover:ring-blue-500 shadow-lg shadow-gray-900 ps-2 pe-4 py-1 bg-blue-700 rounded-md"
               >
                 <svg
                   class="w-6"
@@ -296,7 +296,7 @@
                 Submit Case
               </button>
               <button
-                class="Missed-btn text-red-600 hover:text-white flex-grow-2 hover:ring hover:ring-red-500 hover:bg-red-800 w-fit px-4 py-1 rounded-md"
+                class="Missed-btn text-red-600 border border-red-600 shadow-lg shadow-gray-900 hover:text-white flex-grow-2 hover:ring hover:ring-red-500 hover:bg-red-800 w-fit px-4 py-1 rounded-md"
               >
                 Missed Case
               </button>
@@ -305,10 +305,10 @@
         </section>
 
 
-      <div id="captureElement">
+      <div id="captureElement" class="overflow-visible">
         <div>
           <h1 class="mx-8 my-6 font-bold text-xl">Current day stats:</h1>
-          <button id="downloadButton">screenshot</button>
+          <button id="downloadButton" class="hidden">screenshot</button>
         </div>
         <section
           id="Stats-section"
