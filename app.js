@@ -92,3 +92,14 @@ downloadButton.addEventListener('click', () => {
 // init flatPicker
 fp();
 subAdvisors.formGenerator();
+
+// Register the service worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register(new URL('/sw.js', import.meta.url)).then(registration => {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, error => {
+      console.log('ServiceWorker registration failed: ', error);
+    });
+  });
+}
