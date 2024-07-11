@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SA Tracker</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="src/images/icon.png">
+    <link rel="apple-touch-icon" href="src/images/icon.png">
     <link href="./src/output.css" rel="stylesheet" />
     <script defer type="module" src="./app.js"></script>
   </head>
@@ -307,7 +310,7 @@
       <div id="captureElement">
         <div>
           <h1 class="mx-8 my-6 font-bold text-xl">Current day stats:</h1>
-          <button id="downloadButton">screenshot</button>
+          <button id="downloadButton" class="hidden">screenshot</button>
         </div>
         <section
           id="Stats-section"
