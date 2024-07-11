@@ -1,6 +1,6 @@
 const mainSection = document.querySelector('#main-section')
-const calendarIcon =document.querySelector('#Calendar-icon')
-
+const calendarIcon = document.querySelector('#Calendar-icon')
+const caseSection = document.querySelector('.Case-section')
 class CaseSection {
   currentShift = 'BigNight'
 
