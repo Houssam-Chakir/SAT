@@ -18,7 +18,7 @@ dropDownBtn.addEventListener("click", () => Dropdown.toggleMenu());
 dropDownItems.forEach((item) => {
   // When a dropdown item is clicked, update the shift in caseSection and toggle the menu
   item.addEventListener("click", () => {
-    CaseSection.updateShift(item.id); // Update the shift with the item's id
+    CaseSection.updateShift(item); // Update the shift with the item's id
     Dropdown.toggleMenu(); // Toggle the dropdown menu
   });
 });
@@ -103,4 +103,3 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-

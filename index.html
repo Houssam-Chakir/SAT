@@ -107,93 +107,10 @@
           class="text-blue-950 rounded-md px-2 w-28"
         />
         <!-- SHIFT DROPDOWN BUTTON -->
-        <svg
-          class="w-8 h-8 ms-2 pt-1"
-          height="64px"
-          viewBox="0 0 19 19"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="#000000"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              fill="#6180e5"
-              fill-rule="evenodd"
-              d="M207.960546,159.843246 L210.399107,161.251151 C210.637153,161.388586 210.71416,161.70086 210.580127,161.933013 C210.442056,162.172159 210.144067,162.258604 209.899107,162.117176 L207.419233,160.68542 C207.165323,160.8826 206.846372,161 206.5,161 C205.671573,161 205,160.328427 205,159.5 C205,158.846891 205.417404,158.291271 206,158.085353 L206,153.503423 C206,153.22539 206.231934,153 206.5,153 C206.776142,153 207,153.232903 207,153.503423 L207,158.085353 C207.582596,158.291271 208,158.846891 208,159.5 C208,159.6181 207.986351,159.733013 207.960546,159.843246 Z M206.5,169 C211.746705,169 216,164.746705 216,159.5 C216,154.253295 211.746705,150 206.5,150 C201.253295,150 197,154.253295 197,159.5 C197,164.746705 201.253295,169 206.5,169 Z"
-              transform="translate(-197 -150)"
-            ></path>
-          </g>
-        </svg>
-        <div class="relative inline-block text-left">
-          <div class="drop-down__btn">
-            <button
-              type="button"
-              class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-              id="menu-button"
-              aria-expanded="true"
-              aria-haspopup="true"
-            >
-              Shift
-              <svg
-                class="-mr-1 h-5 w-5 text-gray-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
 
-          <div
-            class="hidden drop-down absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-in-out delay-150"
-            role="menu"
-            aria-orientation="vertical"
-            aria-labelledby="menu-button"
-            tabindex="-1"
-            placeholder="Shift"
-          >
-            <div class="py-1" role="none">
-              <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-              <a
-                href="#"
-                class="drop-down__item hover:bg-gray-800 hover:text-white text-gray-700 block px-4 py-2 text-sm"
-                role="menuitem"
-                tabindex="-1"
-                id="BigNight"
-                >Big Night</a
-              >
-              <a
-                href="#"
-                class="drop-down__item hover:bg-gray-800 hover:text-white text-gray-700 block px-4 py-2 text-sm"
-                role="menuitem"
-                tabindex="-1"
-                id="Morning"
-                >Morning</a
-              >
-              <a
-                href="#"
-                class="drop-down__item hover:bg-gray-800 hover:text-white text-gray-700 block px-4 py-2 text-sm"
-                role="menuitem"
-                tabindex="-1"
-                id="Night"
-                >Night</a
-              >
-            </div>
-          </div>
-        </div>
       </div>
     </header>
-    <section id="Calendar-icon" class="flex flex-col items-center pt-24">
+    <section id="Calendar-icon" class="hidden flex flex-col items-center pt-24">
       <svg
         class="w-[200px] animate-bounce"
         viewBox="0 0 24 24"
@@ -221,18 +138,78 @@
       </svg>
       <h1 class="text-xl text-[#ccd8ff]">Please Select a day first</h1>
     </section>
-    <div id="main-section" class="flex flex-wrap hidden">
-      <div>
+    <div id="main-section" class="flex flex-wrap">
+      <div class="w-full">
         <!-- CASE SECTION -->
         <section
           class="Case-section bg-gray-900 m-4 h-fit w-[592px] border rounded-md border-gray-700"
         >
-          <div class="Case-shift rounded-t-sm bigNight flex gap-2 p-3 w-full">
-            <div class="rounded-lg">BigNight</div>
-            <div class="">
-              <h2>Case Data</h2>
+        <div class="Case-shift rounded-t-sm bg-cyan-700 flex gap-2 p-3 w-full items-baseline">
+          <div class="relative inline-block text-left">
+            <div class="drop-down__btn">
+              <button
+                type="button"
+                class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                id="menu-button"
+                aria-expanded="true"
+                aria-haspopup="true"
+              >
+                Big Night
+                <svg
+                  class="-mr-1 h-5 w-5 text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="hidden drop-down absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-in-out delay-150"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+              placeholder="Shift"
+            >
+              <div class="py-1" role="none">
+                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                <a
+                  href="#"
+                  class="drop-down__item hover:bg-gray-800 hover:text-white text-gray-700 block px-4 py-2 text-sm"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="BigNight"
+                  >Big Night</a
+                >
+                <a
+                  href="#"
+                  class="drop-down__item hover:bg-gray-800 hover:text-white text-gray-700 block px-4 py-2 text-sm"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="Morning"
+                  >Morning</a
+                >
+                <a
+                  href="#"
+                  class="drop-down__item hover:bg-gray-800 hover:text-white text-gray-700 block px-4 py-2 text-sm"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="Night"
+                  >Night</a
+                >
+              </div>
             </div>
           </div>
+             case data
+          </div>
+
           <!-- SUB ADVISORS  SECTION -->
           <div class="Sub-advisors h-full flex flex-col gap-6">
             <div class="flex flex-col gap-4 pt-6 px-4">
@@ -304,7 +281,7 @@
           </div>
         </section>
 
-
+      </div>
       <div id="captureElement" class="overflow-visible">
         <div>
           <h1 class="mx-8 my-6 font-bold text-xl">Current day stats:</h1>
