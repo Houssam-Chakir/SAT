@@ -104,9 +104,9 @@
         <input
           type="text"
           id="date-picker"
-          class="text-blue-950 rounded-md px-2 w-28"
+          class="bg-gray-900 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 hover:bg-gray-950 rounded-md px-2 w-28"
         />
-        <!-- SHIFT DROPDOWN BUTTON -->
+
 
       </div>
     </header>
@@ -138,23 +138,28 @@
       </svg>
       <h1 class="text-xl text-[#ccd8ff]">Please Select a day first</h1>
     </section>
-    <div id="main-section" class="flex flex-wrap">
-      <div class="w-full">
+    <div id="main-section" class="flex flex-col">
+      <div class="">
+        <div>
+          <h1 class="mx-5 my-6 font-bold text-xl">Data collection section:</h1>
+        </div>
         <!-- CASE SECTION -->
         <section
-          class="Case-section bg-gray-900 m-4 h-fit w-[592px] border rounded-md border-gray-700"
+          class="Case-section bg-gray-900 m-4 h-fit w-[592px] border border-gray-700"
         >
-        <div class="Case-shift rounded-t-sm bg-cyan-700 flex gap-2 p-3 w-full items-baseline">
+        <div class="Case-shift bg-cyan-700 flex gap-2 p-3 w-full items-baseline">
+        <div class="hidden bg-cyan-700 bg-orange-700 bg-indigo-700"></div>
           <div class="relative inline-block text-left">
+            <!-- SHIFT DROPDOWN BUTTON -->
             <div class="drop-down__btn">
               <button
                 type="button"
-                class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                class="inline-flex w-full justify-center gap-x-1.5 rounded-md  px-3 py-2 text-sm font-semibold bg-gray-900 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 hover:bg-gray-950"
                 id="menu-button"
                 aria-expanded="true"
                 aria-haspopup="true"
               >
-                Big Night
+                Big Night shift
                 <svg
                   class="-mr-1 h-5 w-5 text-gray-400"
                   viewBox="0 0 20 20"
@@ -237,7 +242,7 @@
             </div>
             <div class="pl-4">
               <button
-                class="Add-btn underline hover:bg-blue-500 w-fit p-1 rounded-lg"
+                class="Add-btn underline hover:text-blue-500 w-fit p-1 rounded-lg"
               >
                 + Add Sub-Advisor
               </button>
@@ -284,12 +289,12 @@
       </div>
       <div id="captureElement" class="overflow-visible">
         <div>
-          <h1 class="mx-8 my-6 font-bold text-xl">Current day stats:</h1>
+          <h1 class="mx-5 my-6 font-bold text-xl">Current day stats:</h1>
           <button id="downloadButton" class="hidden">screenshot</button>
         </div>
         <section
           id="Stats-section"
-          class="Case-section flex flex-col m-4 h-fit ring-2 ring-inset rounded-md ring-gray-700 overflow-hidden w-fit"
+          class="Case-section flex flex-col m-4 h-fit ring-2 ring-inset ring-gray-700 overflow-hidden w-fit"
         >
           <!--  -->
           <div id="Stats-header" class="flex bg-slate-800">
@@ -414,10 +419,10 @@
           </div>
         </section>
         <div>
-          <h2 class="mx-8 my-6 font-bold text-xl">Dashboard:</h2>
+          <h2 class="mx-5 my-6 font-bold text-xl">Dashboard:</h2>
           <section
             id="dashboard"
-            class="Case-section flex flex-col m-4 h-fit ring-2 ring-inset rounded-md ring-gray-700 overflow-hidden w-fit"
+            class="Case-section flex flex-col m-4 h-fit ring-2 ring-inset ring-gray-700 overflow-hidden w-fit"
           >
             <h2 class="m-8 italic text-gray-500">No Available Data Yet</h2>
           </section>

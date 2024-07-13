@@ -13,9 +13,10 @@ class CaseSection {
     const color = this.shiftColor(shift.id)
     const sectionHeader = caseSection.firstElementChild
 
-    sectionHeader.classList = `Case-shift rounded-t-sm bg-${color}-700 flex gap-2 p-3 w-full items-baseline`
+    sectionHeader.classList = `Case-shift bg-${color}-700 flex gap-2 p-3 w-full items-baseline`
     dropDownBtn.firstElementChild.innerHTML = `
         ${shift.innerHTML}
+        shift
         <svg
           class="-mr-1 h-5 w-5 text-gray-400"
           viewBox="0 0 20 20"

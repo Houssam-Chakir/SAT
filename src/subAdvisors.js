@@ -14,9 +14,9 @@ class SubAdvisors {
           <!-- SUB ADVISORS DROPDOWN BUTTON -->
           <div class="drop-down__btn">
             <button  data-name='' type="button"
-              style="z-index: ${this.zIndex};" class=" inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2  text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-500"
+              style="z-index: ${this.zIndex};" class=" inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-950 px-3 py-2  text-sm font-medium text-gray-400 shadow-sm ring-1 ring-inset ring-gray-700 hover:ring-2 hover:ring-slate-200"
               id="menu-button__SA" aria-expanded="true" aria-haspopup="true">
-              Select
+              Select a name
               <svg class="mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd"
                   d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
@@ -41,7 +41,7 @@ class SubAdvisors {
         <!-- HT -->
         <div class="flex gap-3">
           <div class="pt-1">Handle Time</div>
-          <input id="AHT" type="number" class="text-blue-950 rounded-md px-2 w-[120px]" placeholder="in Minutes" style="width: 120px;">
+          <input id="AHT" type="number" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-950 px-3 py-2  text-sm font-medium text-white shadow-sm ring-1 ring-inset ring-gray-700 hover:ring-2 hover:ring-slate-200" placeholder="in Minutes" style="width: 120px;">
         </div>
         <!-- Delete BUTTON -->
         <button class='Sub-advisor__delete-btn flex deleteBtn text-xl rounded-lg px-3 p-1 text-red-600'>
@@ -71,7 +71,7 @@ class SubAdvisors {
     dropDown.addEventListener("click", (e) => {
       btn.innerHTML = `
       <button data-name='${e.target.id}' type="button"
-      class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  "
+      class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-950 px-3 py-2  text-sm font-medium text-white shadow-sm ring-1 ring-inset ring-gray-700 hover:ring-2 hover:ring-slate-200"
       id="menu-button__SA" aria-expanded="true" aria-haspopup="true">
       ${e.target.id}
       <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

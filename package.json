@@ -8,7 +8,8 @@
     "build:css": "npx tailwindcss -i ./styles.css -o ./src/output.css --watch",
     "start": "parcel index.html",
     "start:https": "parcel index.html --https",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "clear": "rm -rf .parcel-cache"
   },
   "dependencies": {
     "@parcel/packager-raw-url": "^2.12.0",
