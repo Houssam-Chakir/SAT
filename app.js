@@ -51,7 +51,7 @@ subAdvisorsSection.addEventListener("click", (e) => {
 
   // Function to handle adding a new sub-advisor
   const addSubAdvisor = (target) => {
-    if (target.classList.contains('Add-btn')) {
+    if (target.classList.contains('Add-btn')  || target.closest(".Add-btn")) {
       subAdvisors.formGenerator();
     }
   };
