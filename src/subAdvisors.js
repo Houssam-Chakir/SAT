@@ -14,8 +14,8 @@ class SubAdvisors {
         <div class="relative inline-block text-left">
           <!-- SUB ADVISORS DROPDOWN BUTTON -->
           <div class="drop-down__btn">
-            <button  data-name=${sa ? sa : ''} type="button"
-              style="z-index: ${this.zIndex};" class=" inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-950 px-3 py-2  text-sm font-medium text-gray-400 shadow-sm ring-1 ring-inset ring-gray-700 hover:ring-2 hover:ring-slate-200"
+            <button  data-name='${sa ? sa : ''}' type="button"
+              style="z-index: ${this.zIndex};" class=" inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-950 px-3 py-2  text-sm font-medium ${sa ? 'text-white' : 'text-gray-400'} shadow-sm ring-1 ring-inset ring-gray-700 hover:ring-2 hover:ring-slate-200"
               id="menu-button__SA" aria-expanded="true" aria-haspopup="true">
               ${sa ? sa : 'Select a name'}
               <svg class="mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -82,7 +82,12 @@ class SubAdvisors {
       </svg>
     </button>
       `;
+
       suggestions.updateSuggestions(e.target.id)
+      const pills = document.querySelectorAll('.Suggestion-btn')
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => this.formGenerator(pill.innerHTML))
+      })
     });
   }
 

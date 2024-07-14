@@ -1,3 +1,5 @@
+import subAdvisors from "./subAdvisors"
+
 const suggestionsSection = document.querySelector('.suggestions')
 
 class Suggestion {
@@ -8,12 +10,13 @@ class Suggestion {
   pillGenerator(name) {
     const markup = `
        <button
-          class="Add-btn text-xs bg-slate-600 hover:bg-slate-500 w-min-32 overflow-clip p-2 px-4 rounded-full"
+          class="Suggestion-btn text-xs bg-slate-600 hover:bg-slate-500 w-min-32 overflow-x-hidden text-nowrap p-2 px-4 rounded-full"
         >
           ${name}
         </button>
     `
     suggestionsSection.insertAdjacentHTML('beforeend',markup)
+
   }
 
   updateSuggestions(name) {
@@ -32,6 +35,8 @@ class Suggestion {
       this.pillGenerator(name)
     })
     console.log('3 this.sug: ', this.sug);
+
+
 
   }
 
