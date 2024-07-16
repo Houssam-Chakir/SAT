@@ -43,7 +43,7 @@ subAdvisorsSection.addEventListener("click", (e) => {
 
   // Function to handle deleting a sub-advisor
   const deleteSubAdvisor = (target) => {
-    if (target.classList.contains("Sub-advisor__delete-btn")) {
+    if (target.classList.contains("Sub-advisor__delete-btn") || target.closest(".Sub-advisor__delete-btn")) {
       const subAdvisorElement = target.closest(".Sub-advisor");
       subAdvisorElement.remove();
     }
