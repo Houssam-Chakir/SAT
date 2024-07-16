@@ -41,7 +41,7 @@ class SubAdvisors {
         </div>
         <!-- HT -->
         <div class="flex">
-          <label for='AHT' class="pt-1 pe-2">Handle Time</label>
+          <label class="pt-1 pe-2">Handle Time</label>
           <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepDown();" class='bg-slate-800 hover:bg-slate-500 w-8 p-2 rounded-s-md ring-1 ring-inset ring-gray-700'>
             -
           </button>
