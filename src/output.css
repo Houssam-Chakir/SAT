@@ -570,6 +570,18 @@ video {
   z-index: 10;
 }
 
+.z-auto {
+  z-index: auto;
+}
+
+.z-\[\] {
+  z-index: ;
+}
+
+.z-\[600\] {
+  z-index: 600;
+}
+
 .m-4 {
   margin: 1rem;
 }
