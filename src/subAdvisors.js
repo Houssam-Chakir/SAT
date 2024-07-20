@@ -98,7 +98,7 @@ class SubAdvisors {
       suggestions.updateSuggestions(e.target.id)
       const pills = document.querySelectorAll('.Suggestion-btn')
       pills.forEach(pill => {
-        pill.addEventListener('click', () => this.formGenerator(pill.innerHTML))
+        pill.addEventListener('click', () => this.formGenerator(pill.innerHTML.trim()))
       })
     });
   }
