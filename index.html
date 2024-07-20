@@ -51,62 +51,149 @@
           Sub-Advisors Tracker Interface
         </h1>
       </div>
-      <div class="flex flex-wrap gap-3 px-3 py-1">
-        <!-- DATE PICKER -->
-        <svg
-          class="w-8"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M6.94028 2C7.35614 2 7.69326 2.32421 7.69326 2.72414V4.18487C8.36117 4.17241 9.10983 4.17241 9.95219 4.17241H13.9681C14.8104 4.17241 15.5591 4.17241 16.227 4.18487V2.72414C16.227 2.32421 16.5641 2 16.98 2C17.3958 2 17.733 2.32421 17.733 2.72414V4.24894C19.178 4.36022 20.1267 4.63333 20.8236 5.30359C21.5206 5.97385 21.8046 6.88616 21.9203 8.27586L22 9H2.92456H2V8.27586C2.11571 6.88616 2.3997 5.97385 3.09665 5.30359C3.79361 4.63333 4.74226 4.36022 6.1873 4.24894V2.72414C6.1873 2.32421 6.52442 2 6.94028 2Z"
-              fill="#6180e5"
-            ></path>
-            <path
-              opacity="0.5"
-              d="M21.9995 14.0001V12.0001C21.9995 11.161 21.9963 9.66527 21.9834 9H2.00917C1.99626 9.66527 1.99953 11.161 1.99953 12.0001V14.0001C1.99953 17.7713 1.99953 19.6569 3.1711 20.8285C4.34267 22.0001 6.22829 22.0001 9.99953 22.0001H13.9995C17.7708 22.0001 19.6564 22.0001 20.828 20.8285C21.9995 19.6569 21.9995 17.7713 21.9995 14.0001Z"
-              fill="#6180e5"
-            ></path>
-            <path
-              d="M18 17C18 17.5523 17.5523 18 17 18C16.4477 18 16 17.5523 16 17C16 16.4477 16.4477 16 17 16C17.5523 16 18 16.4477 18 17Z"
-              fill="#6180e5"
-            ></path>
-            <path
-              d="M18 13C18 13.5523 17.5523 14 17 14C16.4477 14 16 13.5523 16 13C16 12.4477 16.4477 12 17 12C17.5523 12 18 12.4477 18 13Z"
-              fill="#6180e5"
-            ></path>
-            <path
-              d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z"
-              fill="#6180e5"
-            ></path>
-            <path
-              d="M13 13C13 13.5523 12.5523 14 12 14C11.4477 14 11 13.5523 11 13C11 12.4477 11.4477 12 12 12C12.5523 12 13 12.4477 13 13Z"
-              fill="#6180e5"
-            ></path>
-            <path
-              d="M8 17C8 17.5523 7.55228 18 7 18C6.44772 18 6 17.5523 6 17C6 16.4477 6.44772 16 7 16C7.55228 16 8 16.4477 8 17Z"
-              fill="#6180e5"
-            ></path>
-            <path
-              d="M8 13C8 13.5523 7.55228 14 7 14C6.44772 14 6 13.5523 6 13C6 12.4477 6.44772 12 7 12C7.55228 12 8 12.4477 8 13Z"
-              fill="#6180e5"
-            ></path>
-          </g>
-        </svg>
-        <input
-          type="text"
-          id="date-picker"
-          class="bg-gray-900 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 hover:bg-gray-950 rounded-md px-2 w-28"
-        />
+      <div class="flex gap-3 items-center">
+        <div class="flex flex-wrap gap-3 px-3 py-1">
+          <!-- DATE PICKER -->
+          <svg
+            class="w-8"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M6.94028 2C7.35614 2 7.69326 2.32421 7.69326 2.72414V4.18487C8.36117 4.17241 9.10983 4.17241 9.95219 4.17241H13.9681C14.8104 4.17241 15.5591 4.17241 16.227 4.18487V2.72414C16.227 2.32421 16.5641 2 16.98 2C17.3958 2 17.733 2.32421 17.733 2.72414V4.24894C19.178 4.36022 20.1267 4.63333 20.8236 5.30359C21.5206 5.97385 21.8046 6.88616 21.9203 8.27586L22 9H2.92456H2V8.27586C2.11571 6.88616 2.3997 5.97385 3.09665 5.30359C3.79361 4.63333 4.74226 4.36022 6.1873 4.24894V2.72414C6.1873 2.32421 6.52442 2 6.94028 2Z"
+                fill="#6180e5"
+              ></path>
+              <path
+                opacity="0.5"
+                d="M21.9995 14.0001V12.0001C21.9995 11.161 21.9963 9.66527 21.9834 9H2.00917C1.99626 9.66527 1.99953 11.161 1.99953 12.0001V14.0001C1.99953 17.7713 1.99953 19.6569 3.1711 20.8285C4.34267 22.0001 6.22829 22.0001 9.99953 22.0001H13.9995C17.7708 22.0001 19.6564 22.0001 20.828 20.8285C21.9995 19.6569 21.9995 17.7713 21.9995 14.0001Z"
+                fill="#6180e5"
+              ></path>
+              <path
+                d="M18 17C18 17.5523 17.5523 18 17 18C16.4477 18 16 17.5523 16 17C16 16.4477 16.4477 16 17 16C17.5523 16 18 16.4477 18 17Z"
+                fill="#6180e5"
+              ></path>
+              <path
+                d="M18 13C18 13.5523 17.5523 14 17 14C16.4477 14 16 13.5523 16 13C16 12.4477 16.4477 12 17 12C17.5523 12 18 12.4477 18 13Z"
+                fill="#6180e5"
+              ></path>
+              <path
+                d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z"
+                fill="#6180e5"
+              ></path>
+              <path
+                d="M13 13C13 13.5523 12.5523 14 12 14C11.4477 14 11 13.5523 11 13C11 12.4477 11.4477 12 12 12C12.5523 12 13 12.4477 13 13Z"
+                fill="#6180e5"
+              ></path>
+              <path
+                d="M8 17C8 17.5523 7.55228 18 7 18C6.44772 18 6 17.5523 6 17C6 16.4477 6.44772 16 7 16C7.55228 16 8 16.4477 8 17Z"
+                fill="#6180e5"
+              ></path>
+              <path
+                d="M8 13C8 13.5523 7.55228 14 7 14C6.44772 14 6 13.5523 6 13C6 12.4477 6.44772 12 7 12C7.55228 12 8 12.4477 8 13Z"
+                fill="#6180e5"
+              ></path>
+            </g>
+          </svg>
+          <input
+            type="text"
+            id="date-picker"
+            class="bg-gray-900 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 hover:bg-gray-950 rounded-md px-2 w-28"
+          />
+        </div>
+        <div class="flex gap-2">
+          <svg
+                  class="w-6"
+                  fill="#6180e5"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M16 15.503A5.041 5.041 0 1 0 16 5.42a5.041 5.041 0 0 0 0 10.083zm0 2.215c-6.703 0-11 3.699-11 5.5v3.363h22v-3.363c0-2.178-4.068-5.5-11-5.5z"
+                    ></path>
+                  </g>
+                </svg>
+          <div class="relative inline-block text-left">
+            <!-- SHIFT DROPDOWN BUTTON -->
+            <div class="sa-list__btn">
+              <button
+                type="button"
+                class="inline-flex w-full h-8 justify-center gap-x-1.5 rounded-md px-3 py-1 text-sm font-semibold bg-gray-900 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 hover:bg-gray-950"
+                id="menu-button"
+                aria-expanded="true"
+                aria-haspopup="true"
+              >
+                On-shift
+                <svg
+                  class="-mr-1 h-5 w-5 text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class=" drop-down absolute left-0 z-[600] mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-in-out delay-150"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+              placeholder="Shift"
+            >
+              <div class="py-1" role="none">
+                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                <a
+                  href="#"
+                  class="drop-down__item hover:bg-gray-800 hover:text-white text-gray-700 block px-4 py-2 text-sm"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="BigNight"
+                  >Big Night</a
+                >
+                <a
+                  href="#"
+                  class="drop-down__item hover:bg-gray-800 hover:text-white text-gray-700 block px-4 py-2 text-sm"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="Morning"
+                  >Morning</a
+                >
+                <a
+                  href="#"
+                  class="drop-down__item hover:bg-gray-800 hover:text-white text-gray-700 block px-4 py-2 text-sm"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="Night"
+                  >Night</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
     </header>
     <section id="Calendar-icon" class="hidden flex flex-col items-center pt-24">
       <svg
